@@ -21,6 +21,7 @@
       justify-content: flex-start;
       align-items: center;
       min-height: 100vh;
+      overflow: hidden;
     }
 
     h1 {
@@ -64,12 +65,34 @@
       opacity: 0.9;
     }
 
-    @keyframes heartbeat {
-      0% { transform: scale(1); }
-      25% { transform: scale(1.2); }
-      40% { transform: scale(0.9); }
-      60% { transform: scale(1.1); }
-      100% { transform: scale(1); }
+    /* Floating hearts and flowers */
+    .floating {
+      position: absolute;
+      font-size: 1.5rem;
+      animation: floatUp 10s linear infinite;
+      opacity: 0.7;
+    }
+
+    .floating:nth-child(1) { left: 10%; animation-delay: 0s; }
+    .floating:nth-child(2) { left: 30%; animation-delay: 2s; }
+    .floating:nth-child(3) { left: 50%; animation-delay: 4s; }
+    .floating:nth-child(4) { left: 70%; animation-delay: 6s; }
+    .floating:nth-child(5) { left: 85%; animation-delay: 8s; }
+
+    @keyframes floatUp {
+      0% {
+        bottom: -50px;
+        opacity: 0;
+        transform: scale(0.8) rotate(0deg);
+      }
+      50% {
+        opacity: 1;
+      }
+      100% {
+        bottom: 110%;
+        opacity: 0;
+        transform: scale(1.2) rotate(360deg);
+      }
     }
 
     @media screen and (min-width: 768px) {
@@ -86,16 +109,21 @@
   </style>
 </head>
 <body>
+  <!-- Floating emojis -->
+  <div class="floating">💐</div>
+  <div class="floating">🌸</div>
+  <div class="floating">💖</div>
+  <div class="floating">❤️</div>
+  <div class="floating">🌷</div>
+
   <h1>Happy Girlfriend Day! <span class="heart">❤️</span></h1>
 
   <p>
-    You light up my world and make every moment special. I love you.
+    You light up my world and make every moment special. 💐 I love you. ❤️
   </p>
-  <p>
-    
-  </p>
+ 
 
-  <img src="pic1.png" alt="Us ❤️">
+  <img src="love-photo.jpg" alt="Us ❤️">
 
   <div class="footer">
     With love, Minindu 💌
